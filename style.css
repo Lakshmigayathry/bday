@@ -1403,17 +1403,12 @@ h1, h2, h3, h4 {
 /* ==========================================================================
    FLOATING RETRO MUSIC PLAYER
    ========================================================================== */
-.music-player-container {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    z-index: 9999;
-
-    width: 220px;
-
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
+.music-player-container{
+    position:fixed;
+    right:15px;
+    bottom:15px;
+    width:180px;
+    z-index:9999;
 }
 
 .music-player-container:hover {
