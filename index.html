@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Chippu ❤️ | Our Scrapbook</title>
+  <!-- SEO & Meta Tags -->
+  <meta name="description"
+    content="A handcrafted digital memory album and scrapbook dedicated to Chippu. Filled with memories, wishes, and love.">
+  <meta name="theme-color" content="#6E2C3A">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Background Particle Canvas (Dust, Sparkles, Fireflies, Petals) -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- Audio Element -->
+  <audio id="bg-music" loop preload="auto">
+    <source src="music/him-and-i.mp3.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- LOADING SCREEN (Closed Scrapbook Cover) -->
+  <div id="loading-screen" class="loading-overlay">
+    <div class="loading-content">
+      <div class="loading-book">
+        <div class="loading-cover">
+          <span class="heart-icon">❤️</span>
+        </div>
+        <div class="loading-page"></div>
+      </div>
+      <h1 class="loading-title">Our Story</h1>
+      <p class="loading-sub">Loading memories...</p>
+      <div class="loading-bar-container">
+        <div class="loading-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CONTAINER -->
+  <div id="app" class="hidden">
+
+    <!-- Desk Wooden Backdrop Layer -->
+    <div class="desk-background"></div>
+
+    <!-- BOOK WRAPPER -->
+    <div class="book-container">
+      <div class="book" id="scrapbook">
+
+        <!-- ================= PAGE 1: COVER (CLOSED ALBUM) ================= -->
+        <div class="page cover-page active" id="p1">
+          <div class="page-front cover-texture">
+            <div class="cover-border">
+              <div class="cover-design">
+                <div class="vintage-ribbon">For You</div>
+                <h1 class="cover-title">Our Story</h1>
+                <div class="cover-subtitle">A Scrapbook of Memories</div>
+                <div class="album-lock">
+                  <div class="gift-box-wrapper" id="gift-trigger">
+                    <div class="gift-box">
+                      <div class="gift-lid"></div>
+                      <div class="gift-body"></div>
+                      <div class="gift-ribbon"></div>
+                    </div>
+                  </div>
+                  <p class="open-instruction">There is something for you...</p>
+                  <p class="open-sub-instruction">Open it ❤️</p>
+                </div>
+              </div>
+            </div>
+            <!-- Pressed flower decoration on cover corner -->
+            <div class="pressed-flower corner-tl">
+              <svg viewBox="0 0 100 100" class="doodle-svg">
+                <path d="M50 50 C40 30, 20 40, 50 50 C60 30, 80 40, 50 50 C50 60, 60 80, 50 50 C40 60, 30 80, 50 50"
+                  fill="#D8A7B1" opacity="0.6" stroke="#8B6B61" stroke-width="1.5" />
+                <path d="M50 50 L50 85 C50 85, 45 90, 48 95" fill="none" stroke="#8B6B61" stroke-width="2" />
+                <path d="M50 65 Q35 65, 40 58 Q45 58, 50 65" fill="#8B6B61" opacity="0.4" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= PAGE 2: WELCOME ================= -->
+        <div class="page" id="p2">
+          <div class="page-front paper-texture">
+            <div class="page-content">
+              <!-- Polaroid Decoration -->
+              <div class="deco-polaroid float-left rotation-left">
+                <div class="polaroid-photo">
+                  <img src="images/hero.jpg.jpeg" alt="You & Me">
+                </div>
+                <div class="polaroid-caption">You & I</div>
+                <div class="washi-tape tape-top-right"></div>
+              </div>
+
+              <div class="text-section">
+                <h2 class="serif-title">Happy Birthday Chippu ❤️</h2>
+                <p class="body-text">I made this little surprise just for you.</p>
+                <p class="handwritten-note">"I hope this makes you smile."</p>
+              </div>
+
+              <!-- Doodles and decorations -->
+              <div class="fairy-lights-string">
+                <div class="light"></div>
+                <div class="light"></div>
+                <div class="light"></div>
+                <div class="light"></div>
+                <div class="light"></div>
+              </div>
+
+              <div class="deco-doodle doodle-coffee">
+                <!-- Coffee Cup Doodle -->
+                <svg viewBox="0 0 60 60" width="50" height="50" class="sketch-svg">
+                  <path d="M15 25 C15 45, 45 45, 45 25 Z" fill="none" stroke="#8B6B61" stroke-width="2" />
+                  <path d="M10 23 L50 23" stroke="#8B6B61" stroke-width="2" />
+                  <path d="M45 27 C53 27, 53 35, 45 35" fill="none" stroke="#8B6B61" stroke-width="2" />
+                  <path d="M22 17 Q25 10, 24 5" fill="none" stroke="#8B6B61" stroke-width="1.5" />
+                  <path d="M30 17 Q33 11, 31 6" fill="none" stroke="#8B6B61" stroke-width="1.5" />
+                  <path d="M38 17 Q41 12, 39 7" fill="none" stroke="#8B6B61" stroke-width="1.5" />
+                  <ellipse cx="30" cy="52" rx="18" ry="4" fill="none" stroke="#8B6B61" stroke-width="1" />
+                </svg>
+              </div>
+
+              <div class="deco-doodle doodle-chat">
+                <!-- WhatsApp Chat Bubble Doodle -->
+                <svg viewBox="0 0 60 60" width="55" height="55" class="sketch-svg">
+                  <path
+                    d="M10 15 Q10 5, 25 5 L45 5 Q55 5, 55 15 L55 35 Q55 45, 45 45 L35 45 L20 53 L24 45 L10 45 Q10 45, 10 35 Z"
+                    fill="none" stroke="#8B6B61" stroke-width="2" />
+                  <circle cx="23" cy="25" r="2.5" fill="#D8A7B1" />
+                  <circle cx="32" cy="25" r="2.5" fill="#D8A7B1" />
+                  <circle cx="41" cy="25" r="2.5" fill="#D8A7B1" />
+                </svg>
+              </div>
+
+              <div class="pressed-flower flower-p2">
+                <svg viewBox="0 0 100 100" class="doodle-svg">
+                  <path d="M50 50 Q60 20, 50 10 Q40 20, 50 50" fill="#D8A7B1" opacity="0.5" stroke="#8B6B61"
+                    stroke-width="1.5" />
+                  <path d="M50 50 Q80 60, 90 50 Q80 40, 50 50" fill="#D8A7B1" opacity="0.5" stroke="#8B6B61"
+                    stroke-width="1.5" />
+                  <path d="M50 50 Q40 80, 50 90 Q60 80, 50 50" fill="#D8A7B1" opacity="0.5" stroke="#8B6B61"
+                    stroke-width="1.5" />
+                  <path d="M50 50 Q20 40, 10 50 Q20 60, 50 50" fill="#D8A7B1" opacity="0.5" stroke="#8B6B61"
+                    stroke-width="1.5" />
+                  <circle cx="50" cy="50" r="5" fill="#C8A96A" />
+                </svg>
+              </div>
+
+              <button class="nav-btn continue-btn" id="to-p3">Continue →</button>
+            </div>
+            <div class="page-number">2</div>
+          </div>
+        </div>
+
+        <!-- ================= PAGE 3: MAKE A WISH ================= -->
+        <div class="page" id="p3">
+          <div class="page-front paper-texture">
+            <div class="page-content">
+              <h2 class="serif-title text-center">Make A Wish</h2>
+
+              <div class="cake-container">
+                <!-- 3D-ish CSS/SVG Cake -->
+                <div class="cake">
+                  <div class="cake-layer layer-bottom"></div>
+                  <div class="cake-layer layer-middle"></div>
+                  <div class="cake-layer layer-top"></div>
+                  <div class="cake-icing"></div>
+                  <div class="candles-wrapper">
+                    <!-- Candle 1 -->
+                    <div class="candle candle-1 active">
+                      <div class="candle-wick"></div>
+                      <div class="flame"></div>
+                      <div class="smoke"></div>
+                    </div>
+                    <!-- Candle 2 -->
+                    <div class="candle candle-2 active">
+                      <div class="candle-wick"></div>
+                      <div class="flame"></div>
+                      <div class="smoke"></div>
+                    </div>
+                    <!-- Candle 3 -->
+                    <div class="candle candle-3 active">
+                      <div class="candle-wick"></div>
+                      <div class="flame"></div>
+                      <div class="smoke"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="wish-instructions">
+                <p class="instruction-main">Close your eyes...</p>
+                <p class="instruction-sub">Make a wish...</p>
+                <p class="instruction-action">Now blow out the candles.</p>
+              </div>
+
+              <!-- Interaction Section -->
+              <div class="wish-controls">
+                <div class="mic-status" id="mic-status-msg">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                    class="mic-icon">
+                    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
+                    <path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8" />
+                  </svg>
+                  <span>Microphone blowing enabled</span>
+                </div>
+                <button class="blow-btn" id="manual-blow-btn">💨 Blow Candles</button>
+              </div>
+
+              <!-- Revealed Success Text -->
+              <div class="celebration-message hidden" id="celebration-msg">
+                <div class="magic-glow-text">Happy Birthday Chipputta</div>
+                <button class="nav-btn continue-btn" id="to-p4">See Our Memories</button>
+              </div>
+
+              <div class="deco-doodle doodle-camera">
+                <!-- Film Camera Doodle -->
+                <svg viewBox="0 0 60 60" width="50" height="50" class="sketch-svg">
+                  <rect x="10" y="20" width="40" height="30" rx="5" fill="none" stroke="#8B6B61" stroke-width="2" />
+                  <path d="M22 20 L22 15 L38 15 L38 20" fill="none" stroke="#8B6B61" stroke-width="2" />
+                  <circle cx="30" cy="35" r="8" fill="none" stroke="#8B6B61" stroke-width="2" />
+                  <circle cx="42" cy="27" r="2.5" fill="#8B6B61" />
+                  <rect x="14" y="24" width="8" height="4" fill="none" stroke="#8B6B61" stroke-width="1.5" />
+                </svg>
+              </div>
+
+              <div class="washi-tape tape-bottom-left"></div>
+            </div>
+            <div class="page-number">3</div>
+          </div>
+        </div>
+
+        <!-- ================= PAGE 4: MEMORIES (POLAROID GALLERY) ================= -->
+        <div class="page" id="p4">
+          <div class="page-front paper-texture scrollable-page">
+            <div class="page-content">
+              <h2 class="serif-title text-center">Our Memories</h2>
+
+              <div class="polaroid-collage">
+
+                <!-- Polaroid 1 -->
+                <div class="polaroid polaroid-item rotation-r-2" data-index="1">
+                  <div class="washi-tape tape-top-center"></div>
+                  <div class="polaroid-photo">
+                    <img src="images/photo1.jpg.jpeg" alt="Memory 1">
+                  </div>
+                </div>
+
+                <!-- Polaroid 2 -->
+                <div class="polaroid polaroid-item rotation-l-3" data-index="2">
+                  <div class="washi-tape tape-top-left"></div>
+                  <div class="polaroid-photo">
+                    <img src="images/photo2.jpg.jpeg" alt="Memory 2">
+                  </div>
+                </div>
+
+                <!-- Polaroid 3 -->
+                <div class="polaroid polaroid-item rotation-r-4" data-index="3">
+                  <div class="washi-tape tape-top-right"></div>
+                  <div class="polaroid-photo">
+                    <img src="images/photo3.jpg.jpeg" alt="Memory 3">
+                  </div>
+                </div>
+
+                <!-- Polaroid 4 -->
+                <div class="polaroid polaroid-item rotation-l-2" data-index="4">
+                  <div class="washi-tape tape-top-center"></div>
+                  <div class="polaroid-photo">
+                    <img src="images/photo4.jpg.jpeg" alt="Memory 4">
+                  </div>
+                </div>
+
+                <!-- Polaroid 5 -->
+                <div class="polaroid polaroid-item rotation-r-3" data-index="5">
+                  <div class="washi-tape tape-top-left"></div>
+                  <div class="polaroid-photo">
+                    <img src="images/photo5.jpg.jpeg" alt="Memory 5">
+                  </div>
+                </div>
+
+                <!-- Polaroid 6 -->
+                <div class="polaroid polaroid-item rotation-l-4" data-index="6">
+                  <div class="washi-tape tape-top-right"></div>
+                  <div class="polaroid-photo">
+                    <img src="images/photo6.jpg.jpeg" alt="Memory 6">
+                  </div>
+                </div>
+
+                <!-- Polaroid 7 -->
+                <div class="polaroid polaroid-item rotation-r-2" data-index="7">
+                  <div class="washi-tape tape-top-center"></div>
+                  <div class="polaroid-photo">
+                    <img src="images/photo7.jpg.jpeg" alt="Memory 7">
+                  </div>
+                </div>
+
+                <!-- Polaroid 8 -->
+                <div class="polaroid polaroid-item rotation-l-2" data-index="8">
+                  <div class="washi-tape tape-top-left"></div>
+                  <div class="polaroid-photo">
+                    <img src="images/photo8.jpg.jpeg" alt="Memory 8">
+                  </div>
+                </div>
+
+                <!-- Polaroid 9 -->
+                <div class="polaroid polaroid-item rotation-r-3" data-index="9">
+                  <div class="washi-tape tape-top-right"></div>
+                  <div class="polaroid-photo">
+                    <img src="images/photo9.jpg.jpeg" alt="Memory 9">
+                  </div>
+                </div>
+
+                <!-- Polaroid 10 -->
+                <div class="polaroid polaroid-item rotation-l-3" data-index="10">
+                  <div class="washi-tape tape-top-center"></div>
+                  <div class="polaroid-photo">
+                    <img src="images/photo10.jpg.jpeg" alt="Memory 10">
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Doodles inside gallery page -->
+              <div class="deco-doodle doodle-receipt">
+                <!-- Bakery Receipt Doodle -->
+                <svg viewBox="0 0 50 70" width="45" height="60" class="sketch-svg">
+                  <path d="M5 5 L45 5 L45 65 L40 60 L35 65 L30 60 L25 65 L20 60 L15 65 L10 60 L5 65 Z" fill="none"
+                    stroke="#8B6B61" stroke-width="1.5" />
+                  <path d="M10 15 H40 M10 25 H30 M10 35 H35 M10 45 H25 M30 45 H40 M15 55 H35" stroke="#8B6B61"
+                    stroke-width="1" stroke-dasharray="2 1" />
+                </svg>
+              </div>
+
+              <div class="deco-doodle doodle-insta">
+                <!-- Instagram Notification Doodle -->
+                <svg viewBox="0 0 60 50" width="55" height="45" class="sketch-svg">
+                  <path
+                    d="M5 10 Q5 2, 15 2 L45 2 Q55 2, 55 10 L55 35 Q55 43, 45 43 L35 43 L30 48 L25 43 L15 43 Q5 43, 5 35 Z"
+                    fill="none" stroke="#8B6B61" stroke-width="1.8" />
+                  <path d="M22 23 C22 17, 38 17, 38 23 C38 29, 30 35, 30 35 C30 35, 22 29, 22 23 Z" fill="#6E2C3A"
+                    opacity="0.8" stroke="#6E2C3A" stroke-width="1" />
+                </svg>
+              </div>
+
+              <div class="gallery-footer">
+                <p class="footer-msg">"But pictures can never tell everything..."</p>
+                <button class="nav-btn continue-btn" id="to-p5">Read My Letter ❤️</button>
+              </div>
+            </div>
+            <div class="page-number">4</div>
+          </div>
+        </div>
+
+        <!-- ================= PAGE 5: LETTER (JOURNAL TYPEWRITER) ================= -->
+        <div class="page" id="p5">
+          <div class="page-front paper-texture journal-paper">
+            <!-- Sunlight overlay effect -->
+            <div class="sunlight-overlay"></div>
+
+            <div class="page-content">
+              <div class="journal-frame">
+                <!-- Decorative flowers around margin -->
+                <div class="pressed-flower margin-flower-1">
+                  <svg viewBox="0 0 100 100" class="doodle-svg">
+                    <circle cx="50" cy="50" r="10" fill="#C8A96A" opacity="0.6" />
+                    <path d="M50 50 C40 20, 20 40, 50 50 C80 40, 60 20, 50 50" fill="#D8A7B1" opacity="0.4"
+                      stroke="#8B6B61" stroke-width="1" />
+                    <path d="M50 50 C40 80, 20 60, 50 50 C80 60, 60 80, 50 50" fill="#D8A7B1" opacity="0.4"
+                      stroke="#8B6B61" stroke-width="1" />
+                  </svg>
+                </div>
+                <div class="pressed-flower margin-flower-2">
+                  <svg viewBox="0 0 100 100" class="doodle-svg">
+                    <path d="M50 50 Q45 25, 35 15 Q55 25, 50 50" fill="#8B6B61" opacity="0.3" stroke="#8B6B61"
+                      stroke-width="1" />
+                    <path d="M50 50 Q65 35, 75 25 Q65 45, 50 50" fill="#8B6B61" opacity="0.3" stroke="#8B6B61"
+                      stroke-width="1" />
+                    <circle cx="50" cy="50" r="6" fill="#C8A96A" />
+                  </svg>
+                </div>
+
+                <!-- Letter Content with Handwriting Typing Effect -->
+                <div class="letter-scroll-wrapper">
+                  <div class="handwritten-letter" id="letter-content">
+                    <!-- Typing script will fill this dynamically -->
+                  </div>
+
+                  <!-- Wax Seal stamp and Next Button -->
+                  <div class="wax-seal-container hidden" id="wax-seal-area">
+                    <div class="wax-seal" id="wax-seal-trigger">
+                      <div class="seal-inner">❤️</div>
+                    </div>
+                    <div class="wax-seal-instruction">Click the seal to seal with love</div>
+                  </div>
+
+                  <div class="letter-footer hidden" id="letter-footer-btn">
+                    <p class="footer-prompt">One Last Thing </p>
+                    <button class="nav-btn continue-btn" id="to-p6">Turn the Final Page</button>
+                  </div>
+                </div>
+
+                <!-- Map doodle showing India to Doha plane -->
+                <div class="deco-doodle doodle-map">
+                  <svg viewBox="0 0 200 80" width="180" height="70" class="sketch-svg">
+                    <!-- India shape placeholder -->
+                    <path d="M30 45 Q20 50, 15 60 Q25 70, 32 65 Q36 55, 30 45" fill="none" stroke="#8B6B61"
+                      stroke-width="1.5" stroke-dasharray="2 2" />
+                    <!-- Doha shape placeholder -->
+                    <circle cx="160" cy="20" r="4" fill="none" stroke="#8B6B61" stroke-width="2" />
+                    <!-- Path connecting them -->
+                    <path d="M35 55 Q95 20, 155 20" fill="none" stroke="#C8A96A" stroke-width="2" stroke-dasharray="5 5"
+                      id="plane-path" />
+                    <!-- Airplane -->
+                    <path d="M92 31 L98 29 L100 24 L102 29 L108 27 L104 32 L106 37 L102 34 L100 38 L98 34 Z"
+                      fill="#8B6B61" transform="rotate(-15 100 30)" />
+                    <text x="12" y="75" font-family="Poppins" font-size="8" fill="#8B6B61">India</text>
+                    <text x="150" y="12" font-family="Poppins" font-size="8" fill="#8B6B61">Doha</text>
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div class="page-number">5</div>
+          </div>
+        </div>
+
+        <!-- ================= PAGE 6: OUTRO (CLOSED BACK) ================= -->
+        <div class="page" id="p6">
+          <div class="page-front cover-texture">
+            <div class="cover-border">
+              <div class="cover-design">
+                <h1 class="cover-title">Our Story</h1>
+                <p class="closing-text">A beautiful chapter...</p>
+                <div class="heart-lock">❤️</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- FULLSCREEN PHOTO OUTRO STAGE (Triggered after book closes on Page 6) -->
+    <div id="outro-stage" class="outro-overlay hidden">
+      <div class="outro-background-photo" style="background-image: url('images/final.jpg.jpeg?v=2');"></div>
+      <div class="outro-glow-overlay"></div>
+      <div class="outro-light-rays"></div>
+      <div class="outro-content">
+        <h1 class="outro-text">I Love You Forever ❤️</h1>
+        <div class="beating-heart-wrapper">
+          <div class="beating-heart"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FLOATING MUSIC PLAYER -->
+    <div class="music-player-container" id="music-player">
+      <div class="player-paper">
+        <div class="player-washi-tape"></div>
+        <div class="player-controls">
+          <button class="player-btn" id="play-pause-btn" aria-label="Play Music">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" class="play-icon">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" class="pause-icon hidden">
+              <path d="M6 19h4V5H6v14zm8-5h4V5h-4v14z" />
+            </svg>
+          </button>
+
+          <div class="player-volume-group">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" class="volume-icon">
+              <path
+                d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
+            </svg>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.05" value="0.30" class="player-slider"
+              aria-label="Volume">
+          </div>
+        </div>
+        <div class="player-status" id="player-status-text">Ambient Synthesizer Fallback</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- LIGHTBOX FOR POLAROID PHOTOS -->
+  <div id="lightbox" class="lightbox-overlay hidden" aria-hidden="true" role="dialog">
+    <button class="lightbox-close" id="lightbox-close-btn" aria-label="Close Lightbox">&times;</button>
+    <div class="lightbox-container">
+      <div class="lightbox-polaroid">
+        <div class="lightbox-photo-wrapper" id="lightbox-photo-content">
+          <!-- Populated by JS -->
+        </div>
+        <div class="lightbox-handwritten-note" id="lightbox-note">
+          Memories are beautiful...
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Javascript -->
+  <script src="script.js"></script>
+</body>
+
+</html>
