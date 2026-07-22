@@ -1403,12 +1403,14 @@ h1, h2, h3, h4 {
 /* ==========================================================================
    FLOATING RETRO MUSIC PLAYER
    ========================================================================== */
-.music-player-container{
-    position:fixed;
-    right:15px;
-    bottom:15px;
-    width:180px;
-    z-index:9999;
+.music-player-container {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;     /* Move to left */
+  right: auto;    /* Remove right positioning */
+  width: 220px;
+  z-index: 1000;
+  transition: transform 0.3s ease;
 }
 
 .music-player-container:hover {
@@ -1751,25 +1753,17 @@ h1, h2, h3, h4 {
   .gift-ribbon {
     height: 52px;
   }
-  /* Mobile */
-@media (max-width:768px){
+ @media (max-width: 768px) {
 
-    .music-player-container{
-        right: 12px;
-        bottom: 12px;
-        width:170px;
-    }
+  .music-player-container {
+      left: 10px;
+      right: auto;
+      bottom: 10px;
+      width: 170px;
+  }
 
-    .player-paper{
-        width:170px;
-    }
-
-    .player-slider{
-        width:55px;
-    }
+  .player-paper {
+      width: 170px;
+  }
 
 }
-
-  .player-slider{
-    width: 55px;
-  }
