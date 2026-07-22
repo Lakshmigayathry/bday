@@ -867,7 +867,7 @@ document.querySelectorAll('.polaroid-item').forEach(item => {
     const idx = parseInt(item.getAttribute('data-index')) - 1;
     
     // Render the actual local image inside the lightbox
-    lightboxPhotoContent.innerHTML = '<img src="images/photo' + (idx + 1) + '.jpg.jpeg" alt="Memory ' + (idx + 1) + '" style="width:100%; height:100%; object-fit:contain;">';
+    lightboxPhotoContent.innerHTML = '<img src="photo' + (idx + 1) + '.jpg" alt="Memory ' + (idx + 1) + '" style="width:100%; height:100%; object-fit:contain;">';
     
     // Update caption note
     lightboxNote.textContent = state.lightboxImages[idx];
